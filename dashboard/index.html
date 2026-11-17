@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — which pre-token protocol is worth farming next?</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="masthead">
+  <p class="eyebrow">Token Radar &middot; Sealed DefiLlama snapshot <span id="stat-asof">2026-11-14</span> &middot; radar-2 model</p>
+  <h1>Which pre-token protocol is worth farming next?</h1>
+  <p class="lede">Every protocol on the watchlist — at least $50M of TVL and no token on record — plus every further pre-token protocol below that floor that passes the same screen, ranked by what a launch would be worth. Implied value is a model, not a promise: it follows from the snapshot's own figures, never from a hand-kept list of names.</p>
+  <dl class="stats">
+    <div><dt>Watchlist covered</dt><dd id="stat-watchlist">–</dd></div>
+    <div><dt>Pre-token rows scored</dt><dd id="stat-rows">–</dd></div>
+    <div><dt>Early rows below the floor</dt><dd id="stat-early">–</dd></div>
+    <div><dt>Top 10 implied value</dt><dd id="stat-top10">–</dd></div>
+    <div><dt>Live-token protocols set aside</dt><dd id="stat-live">–</dd></div>
+  </dl>
+</header>
+
+<main>
+  <section class="controls" aria-label="Filters">
+    <label>Search <input id="q" type="search" placeholder="Search name, category or chain" autocomplete="off"></label>
+    <label>Category <select id="category"><option value="all">All categories</option></select></label>
+    <label>Chain <select id="chain"><option value="all">All chains</option></select></label>
+    <label class="check"><input id="only-watchlist" type="checkbox"> Watchlist only</label>
+    <div class="tabs" role="tablist">
+      <button id="tab-pre" type="button" role="tab" aria-selected="true">Pre-token</button>
+      <button id="tab-live" type="button" role="tab" aria-selected="false">Live token</button>
+    </div>
+    <label>Sort <select id="sort">
+      <option value="implied">Implied value</option>
+      <option value="tvl">TVL</option>
+      <option value="growth">7d change</option>
+      <option value="age">Age</option>
+    </select></label>
+  </section>
+
+  <p class="count"><span id="row-count">–</span> <span id="count-note">Pre-token protocols, strongest implied value first. Select a row for its model and farm plan.</span></p>
+
+  <div class="layout">
+    <section class="board-wrap">
+      <table class="board">
+        <thead>
+          <tr><th>Rank</th><th>Protocol</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied value</th><th>Board</th></tr>
+        </thead>
+        <tbody id="board-body"></tbody>
+      </table>
+    </section>
+
+    <aside class="detail" id="detail" aria-label="Protocol detail">
+      <p class="detail-empty">Select a protocol on the board to see how its implied value is built and how to farm it.</p>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <p>Implied values are this entry's estimates from the snapshot's figures, not predictions and not prices. A protocol is said to record no token when the snapshot carries no market cap, CoinGecko id or symbol for it — the record is not proof that it has none.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
